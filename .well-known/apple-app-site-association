@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["978Z8XT84.com.jeluchu.laarroba"],
+        "components": [
+          { "/": "/app" },
+          { "/": "/app/*" },
+          { "/": "/comercios/*" },
+          { "/": "/comercios" }
+        ]
+      }
+    ]
+  }
+}
