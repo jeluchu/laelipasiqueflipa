@@ -44,18 +44,26 @@
     </style>
     <script>
         (function () {
-            const playStoreUrl = "https://play.google.com/store/apps/details?id=com.jeluchu.laarroba";
+            const playStoreAppUrl = "market://details?id=com.jeluchu.laarroba";
+            const playStoreWebUrl = "https://play.google.com/store/apps/details?id=com.jeluchu.laarroba";
             const appStoreUrl = "https://apps.apple.com/es/app/la-arroba-comercio-y-usuarios/id1570044504";
             const websiteUrl = "https://www.laelipasiqueflipa.com/";
             const userAgent = navigator.userAgent || "";
             const isAndroid = /Android/i.test(userAgent);
             const isAppleMobile = /iPhone|iPad|iPod/i.test(userAgent)
                 || (/Macintosh/i.test(userAgent) && navigator.maxTouchPoints > 1);
-            const destination = isAndroid
-                ? playStoreUrl
-                : isAppleMobile
-                    ? appStoreUrl
-                    : websiteUrl;
+
+            if (isAndroid) {
+                window.location.replace(playStoreAppUrl);
+                window.setTimeout(function () {
+                    if (document.visibilityState === "visible") {
+                        window.location.replace(playStoreWebUrl);
+                    }
+                }, 1200);
+                return;
+            }
+
+            const destination = isAppleMobile ? appStoreUrl : websiteUrl;
 
             window.location.replace(destination);
         })();
