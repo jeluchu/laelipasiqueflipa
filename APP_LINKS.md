@@ -4,7 +4,23 @@ La URL pública de descarga y apertura de La Arroba es:
 
 ```text
 https://www.laelipasiqueflipa.com/app
+https://www.laelipasiqueflipa.com/app/cuenta
+https://www.laelipasiqueflipa.com/app/cine-verano
+https://www.laelipasiqueflipa.com/app/fiestas
+https://www.laelipasiqueflipa.com/app/stickers
+https://www.laelipasiqueflipa.com/app/cultura
 ```
+
+Los enlaces de destino abren directamente Cine de verano, la programación de
+las fiestas, los stickers de Elipón, la agenda cultural de Ciudad Lineal o la pantalla de cuenta cuando la aplicación está instalada. Sin la aplicación se
+mantiene la derivación a la tienda correspondiente y desde escritorio se
+redirige a la portada web.
+
+`/app/cuenta` debe interpretarse en la aplicación como una intención de acceso
+a la cuenta: mostrar la pantalla que permite iniciar sesión o registrarse.
+La futura solicitud de alta de una tienda debería tener una ruta distinta,
+por ejemplo `/app/comercio/nueva`, para abrir directamente ese formulario sin
+confundirlo con el acceso de usuarios o comercios existentes.
 
 El comportamiento esperado es:
 

@@ -1,0 +1,348 @@
+@font-face {
+  font-display: swap;
+  font-family: "Google Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/google-sans-regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Google Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/google-sans-bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Arroba Latin S";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/arroba-latin-s-black.ttf") format("truetype");
+}
+
+:root {
+  --coral: #f47c7c;
+  --coral-dark: #984e4e;
+  --cream: #f7f6df;
+  --cream-deep: #eef0d2;
+  --green-soft: #c8dfb2;
+  --green-deep: #3d5a2a;
+  --ink: #2f3330;
+  --ink-soft: #5c635a;
+  --white: #fffdf7;
+  --yellow: #f6df6a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--cream);
+  color-scheme: light;
+}
+
+body {
+  align-items: center;
+  background: var(--cream);
+  color: var(--ink);
+  display: flex;
+  font-family: "Google Sans", Arial, sans-serif;
+  justify-content: center;
+  margin: 0;
+  min-height: 100svh;
+  overflow-x: hidden;
+  padding: 24px;
+}
+
+body::before,
+body::after {
+  border: 1px solid rgba(61, 90, 42, .12);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+  position: fixed;
+}
+
+body::before {
+  height: 640px;
+  left: -330px;
+  top: -280px;
+  width: 640px;
+}
+
+body::after {
+  border-color: rgba(244, 124, 124, .16);
+  bottom: -410px;
+  height: 760px;
+  right: -300px;
+  width: 760px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--coral-dark);
+  outline-offset: 4px;
+}
+
+.app-redirect-shell {
+  align-items: center;
+  display: grid;
+  min-height: calc(100svh - 48px);
+  position: relative;
+  width: min(100%, 900px);
+}
+
+.app-redirect-card {
+  background: var(--white);
+  border: 1px solid rgba(47, 51, 48, .08);
+  border-radius: 34px;
+  box-shadow: 0 24px 70px rgba(47, 51, 48, .14);
+  margin: 0 auto;
+  max-width: 620px;
+  padding: clamp(30px, 6vw, 60px);
+  position: relative;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+
+.app-redirect-card::before {
+  background: var(--yellow);
+  border-radius: 50%;
+  content: "✦";
+  color: var(--coral-dark);
+  display: grid;
+  font-size: 25px;
+  height: 54px;
+  place-items: center;
+  position: absolute;
+  right: 28px;
+  top: 25px;
+  transform: rotate(14deg);
+  width: 54px;
+}
+
+.app-brand {
+  align-items: center;
+  display: inline-flex;
+  gap: 12px;
+  text-align: left;
+}
+
+.app-brand-mark {
+  background: var(--green-deep);
+  border: 3px solid var(--cream-deep);
+  border-radius: 20px;
+  box-shadow: 0 8px 18px rgba(61, 90, 42, .18);
+  display: grid;
+  height: 64px;
+  overflow: hidden;
+  place-items: center;
+  transform: rotate(-4deg);
+  width: 64px;
+}
+
+.app-brand-mark img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.app-brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.app-brand-copy strong {
+  font-family: "Arroba Latin S", Arial, sans-serif;
+  font-size: 22px;
+  line-height: .9;
+}
+
+.app-brand-copy small {
+  color: var(--coral-dark);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.app-kicker {
+  color: var(--coral-dark);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  margin: 46px 0 20px;
+  text-transform: uppercase;
+}
+
+.app-redirect-card h1 {
+  font-family: "Arroba Latin S", Arial, sans-serif;
+  font-size: clamp(42px, 8vw, 74px);
+  letter-spacing: -.03em;
+  line-height: .88;
+  margin: 0;
+}
+
+.app-redirect-card h1 em {
+  color: var(--coral);
+  font-style: normal;
+}
+
+.app-redirect-copy {
+  color: var(--ink-soft);
+  font-size: 17px;
+  line-height: 1.5;
+  margin: 25px auto 0;
+  max-width: 410px;
+}
+
+.app-redirect-copy strong {
+  color: var(--green-deep);
+}
+
+.app-redirect-status {
+  align-items: center;
+  background: var(--cream);
+  border-radius: 999px;
+  color: var(--green-deep);
+  display: inline-flex;
+  font-size: 11px;
+  font-weight: 700;
+  gap: 8px;
+  margin: 21px 0 0;
+  padding: 9px 14px;
+}
+
+.app-redirect-status::before {
+  background: var(--coral);
+  border-radius: 50%;
+  content: "";
+  height: 7px;
+  width: 7px;
+}
+
+.app-redirect-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.app-button {
+  align-items: center;
+  border-radius: 12px;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 700;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 18px;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.app-button:hover,
+.app-button:focus-visible {
+  transform: translateY(-3px);
+}
+
+.app-button-primary {
+  background: var(--green-deep);
+  color: var(--cream);
+}
+
+.app-button-primary:hover,
+.app-button-primary:focus-visible {
+  background: var(--coral-dark);
+}
+
+.app-button-secondary {
+  border: 1px solid rgba(47, 51, 48, .17);
+  color: var(--ink);
+}
+
+.app-button-secondary:hover,
+.app-button-secondary:focus-visible {
+  background: var(--cream);
+}
+
+.app-store-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.app-store-links a {
+  border-bottom: 1px solid rgba(152, 78, 78, .36);
+  color: var(--coral-dark);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 2px;
+}
+
+.app-store-links a:hover,
+.app-store-links a:focus-visible {
+  color: var(--green-deep);
+}
+
+.app-redirect-note {
+  color: rgba(92, 99, 90, .8);
+  font-size: 11px;
+  line-height: 1.4;
+  margin: 25px auto 0;
+  max-width: 380px;
+}
+
+.app-decor {
+  color: var(--coral);
+  font-family: "Arroba Latin S", Arial, sans-serif;
+  font-size: clamp(40px, 8vw, 84px);
+  opacity: .12;
+  position: absolute;
+  user-select: none;
+}
+
+.app-decor-one {
+  left: 4%;
+  top: 6%;
+  transform: rotate(-13deg);
+}
+
+.app-decor-two {
+  bottom: 7%;
+  color: var(--green-deep);
+  right: 4%;
+  transform: rotate(11deg);
+}
+
+@media (max-width: 580px) {
+  body { padding: 16px; }
+  .app-redirect-shell { min-height: calc(100svh - 32px); }
+  .app-redirect-card { border-radius: 26px; padding: 30px 22px; }
+  .app-redirect-card::before { height: 42px; right: 18px; top: 18px; width: 42px; }
+  .app-brand-mark { height: 54px; width: 54px; }
+  .app-brand-copy strong { font-size: 20px; }
+  .app-kicker { margin-top: 38px; }
+  .app-redirect-copy { font-size: 15px; }
+  .app-redirect-actions { align-items: stretch; flex-direction: column; }
+  .app-button { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
