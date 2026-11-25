@@ -57,3 +57,11 @@ GitHub Pages. No se usa PHP ni `.htaccess` para este enlace.
 La asociación nativa debe validarse en dispositivos físicos con las
 aplicaciones instaladas. La redirección de la página solo se ejecuta cuando el
 sistema operativo no ha entregado el enlace a la aplicación.
+
+## Invitaciones de alta para comercios
+
+`https://www.laelipasiqueflipa.com/invitacion/<token>` es el enlace de un solo uso que una persona
+administradora genera desde la app para un comercio sin asignar. El token tiene 32 caracteres
+(`A-Z a-z 0-9 - _`). Igual que `/comercios/...`, no hay página estática: `404.html` lo manda al
+enlace inteligente (`/app/?to=<ruta>`), que abre la app en esa ruta o lleva a la tienda de apps.
+En Android el filtro del manifiesto cubre `/invitacion`, y en iOS el AASA incluye `/invitacion/*`.

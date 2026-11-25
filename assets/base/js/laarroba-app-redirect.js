@@ -22,7 +22,7 @@
   // The link being opened: the page's own path, or the one a 404 handed over in ?to= (e.g. /comercios/<tienda>).
   function targetPath() {
     var requested = new URLSearchParams(window.location.search).get("to") || window.location.pathname;
-    return /^\/(app|comercios)(\/[A-Za-z0-9._~-]*)*$/.test(requested) ? requested : "/app";
+    return /^\/(app|comercios|invitacion)(\/[A-Za-z0-9._~-]*)*$/.test(requested) ? requested : "/app";
   }
 
   // On Android an intent URL opens the app on that very path when it is installed and, when it is not,

@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,follow">
   <script>
-    // /comercios/<tienda> has no static page: it is an app link, so it goes through the smart-link flow.
-    if (/^\/comercios(\/|$)/.test(location.pathname)) {
+    // /comercios/<tienda> and /invitacion/<token> have no static page: they are app links, so they go through the smart-link flow.
+    if (/^\/(comercios|invitacion)(\/|$)/.test(location.pathname)) {
       location.replace("/app/?to=" + encodeURIComponent(location.pathname));
     }
   </script>

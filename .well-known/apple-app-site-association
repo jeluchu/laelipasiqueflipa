@@ -7,7 +7,8 @@
           { "/": "/app" },
           { "/": "/app/*" },
           { "/": "/comercios/*" },
-          { "/": "/comercios" }
+          { "/": "/comercios" },
+          { "/": "/invitacion/*" }
         ]
       }
     ]
