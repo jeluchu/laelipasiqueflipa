@@ -9,7 +9,16 @@ https://www.laelipasiqueflipa.com/app/cine-verano
 https://www.laelipasiqueflipa.com/app/fiestas
 https://www.laelipasiqueflipa.com/app/stickers
 https://www.laelipasiqueflipa.com/app/cultura
+https://www.laelipasiqueflipa.com/comercios/<tienda>
 ```
+
+`/comercios/<tienda>` es el enlace que genera la aplicación al compartir una
+tienda. GitHub Pages no tiene una página por tienda, así que `404.html` envía
+cualquier `/comercios/...` al enlace inteligente (`/app/?to=<ruta>`), y
+`comercios/index.html` cubre `/comercios`. En Android el enlace inteligente
+intenta abrir la app en esa misma ruta y, si no está instalada, cae a Google
+Play. Con la app instalada, Android App Links e iOS Universal Links abren la
+tienda directamente sin pasar por la web.
 
 Los enlaces de destino abren directamente Cine de verano, la programación de
 las fiestas, los stickers de Elipón, la agenda cultural de Ciudad Lineal o la pantalla de cuenta cuando la aplicación está instalada. Sin la aplicación se
